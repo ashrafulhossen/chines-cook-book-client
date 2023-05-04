@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.custom-container {
+    @apply 2xl:mx-36 xl:mx-20 lg:mx-8 mx-0
+}
