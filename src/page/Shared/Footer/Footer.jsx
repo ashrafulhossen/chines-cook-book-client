@@ -10,11 +10,11 @@ import logo from "../../../assets/logo.png";
 
 const Footer = () => {
 	return (
-		<footer className="bg-blue-100">
-			<div className="py-12 custom-container grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-12 items-center">
+		<footer className="bg-blue-100 custom-container mb-4 lg:rounded-xl">
+			<div className="py-12 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-12 items-center">
 				<div className="">
 					<Link to={"/"}>
-						<h1 className=" flex items-center flex-col justify-center flex-wrap gap-3 text-4xl font-extrabold cursor-pointer mr-8">
+						<h1 className="px-4 flex items-center flex-col justify-center flex-wrap gap-3 text-4xl font-extrabold cursor-pointer mr-8">
 							<img
 								className="w-100 object-cover"
 								src={logo}
@@ -38,6 +38,8 @@ const Footer = () => {
 						</Link>
 					</p>
 				</div>
+				<div>
+					<h3 className="text-center text-2xl font-bold mb-8">Links</h3>
 				<div className="flex flex-col gap-3 text-center">
 					<Link className="font-bold" to={"/"}>
 						Home
@@ -45,9 +47,7 @@ const Footer = () => {
 					<Link className="font-bold" to={"/blog"}>
 						Blog
 					</Link>
-					<Link className="font-bold" to={"/about"}>
-						About
-					</Link>
+				</div>
 				</div>
 				<div className="flex justify-center sm:justify-start">
 					<ul>

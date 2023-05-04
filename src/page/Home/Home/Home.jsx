@@ -1,11 +1,11 @@
 import React from "react";
 import bannerImg from "../../../assets/banner.jpg";
 import {FaArrowRight} from "react-icons/fa"
+import Chefs from "../Chefs/Chefs";
 const Home = () => {
 	return (
 		<div>
-			<div className="">
-				<div className="absolute top-0 pt-56 md:pt-48 pb-24 flex items-center">
+			<div className="max-[480px]:pb-[1015px] pb-[900px] xl:pb-[780px] lg:pb-[720px] sm:pb-[800px] ">				<div className="absolute top-0 pt-56 md:pt-48 pb-24 flex items-center">
 				<img
 					className="w-full absolute top-0 object-cover object-center h-full"
 					src={bannerImg}
@@ -30,6 +30,9 @@ const Home = () => {
                         <button className="mt-4 btn border-none hover:bg-blue-600 px-8 bg-blue-500">Show <FaArrowRight className="ml-2"/></button>
 					</div>
 				</div>
+			</div>
+			<div className="pt-8 pb-10">
+				<Chefs/>
 			</div>
 		</div>
 	);
