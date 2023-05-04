@@ -22,7 +22,7 @@ const ChefData = () => {
 					}}
 				>
 					<img
-					className="max-w-56 max-h-56 object-cover  rounded-lg shadow-2xl"
+					className="max-w-56 max-h-56 object-cover rounded-lg shadow-2xl"
 						src={image}
 					/>
 					</LazyLoad>
