@@ -59,6 +59,7 @@ const Register = () => {
 								type="text"
 								placeholder="name"
 								className="input input-bordered"
+								required
 							/>
 						</div>
 						<div className="form-control">
@@ -71,6 +72,7 @@ const Register = () => {
 								type="email"
 								placeholder="email"
 								className="input input-bordered"
+								required
 							/>
 						</div>
 						<div className="form-control">
@@ -83,6 +85,7 @@ const Register = () => {
 								type="text"
 								placeholder="password"
 								className="input input-bordered"
+								required
 							/>
 							<label className="label">
 								{password.length > 0 && password.length < 6 && <p className="text-red-500">Password must be 6 characters</p>}
@@ -98,6 +101,7 @@ const Register = () => {
 								type="text"
 								placeholder="photo url"
 								className="input input-bordered"
+								required
 							/>
 						</div>
 						<div className="form-control mt-6">

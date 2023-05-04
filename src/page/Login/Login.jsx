@@ -50,6 +50,7 @@ const Login = () => {
 								type="email"
 								placeholder="email"
 								className="input input-bordered"
+								required
 							/>
 						</div>
 						<div className="form-control">
@@ -62,6 +63,7 @@ const Login = () => {
 								type="text"
 								placeholder="password"
 								className="input input-bordered"
+								required
 							/>
 							<label className="label">
 								<a
