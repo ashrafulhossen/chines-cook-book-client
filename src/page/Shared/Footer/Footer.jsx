@@ -1,5 +1,10 @@
 import React from "react";
-import { FaAngleRight, FaFacebook, FaLinkedin, FaInstagramSquare, FaYoutube } from "react-icons/fa";
+import {
+	FaAngleRight,
+	FaFacebook,
+	FaInstagramSquare,
+	FaYoutube,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 
@@ -16,7 +21,7 @@ const Footer = () => {
 								alt="logo"
 							/>
 							<span className="text-center">
-								Chinese <br/> CookBook
+								Chinese <br /> CookBook
 							</span>
 						</h1>
 					</Link>
@@ -34,9 +39,15 @@ const Footer = () => {
 					</p>
 				</div>
 				<div className="flex flex-col gap-3 text-center">
-					<Link className="font-bold" to={"/"}>Home</Link>
-					<Link className="font-bold" to={"/blog"}>Blog</Link>
-					<Link className="font-bold" to={"/about"}>About</Link>
+					<Link className="font-bold" to={"/"}>
+						Home
+					</Link>
+					<Link className="font-bold" to={"/blog"}>
+						Blog
+					</Link>
+					<Link className="font-bold" to={"/about"}>
+						About
+					</Link>
 				</div>
 				<div className="flex justify-center sm:justify-start">
 					<ul>
@@ -47,12 +58,15 @@ const Footer = () => {
 							</a>
 						</li>
 						<li className="text-xl font-bold">
-							<a className="flex items-center gap-2 mb-4" href="#">
+							<a
+								className="flex items-center gap-2 mb-4"
+								href="#"
+							>
 								<FaInstagramSquare className="inline text-2xl" />{" "}
 								<span>Instagram</span>
 							</a>
 						</li>
-                        <li className="text-xl font-bold">
+						<li className="text-xl font-bold">
 							<a className="flex items-center gap-2" href="#">
 								<FaYoutube className="inline text-2xl" />{" "}
 								<span>Youtube</span>
