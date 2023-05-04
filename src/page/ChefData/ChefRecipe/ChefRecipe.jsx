@@ -11,12 +11,19 @@ const ChefRecipe = ({ recipe }) => {
 	return (
 		<div className="card lg:card-side bg-blue-100 shadow-xl grid-cols-1 grid lg:grid-cols-4 mb-8">
 			<figure className="p-4">
-				
+				<LazyLoad
+					width={400}
+					threshold={0.95}
+					onContentVisible={() => {
+						console.log("loaded!");
+					}}
+				>
 					<img
 						className="w-56 h-56 object-cover rounded-lg"
 						src={image}
 						alt="Album"
 					/>
+				</LazyLoad>
 			</figure>
 			<div className="card-body grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-between px-8 lg:col-span-3">
 				<div>
