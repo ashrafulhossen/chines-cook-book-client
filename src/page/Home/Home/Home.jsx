@@ -1,16 +1,27 @@
 import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import LazyLoad from "react-lazy-load";
 import bannerImg from "../../../assets/banner.jpg";
-import {FaArrowRight} from "react-icons/fa"
 import Chefs from "../Chefs/Chefs";
 const Home = () => {
 	return (
 		<div>
-			<div className="max-[480px]:pb-[1015px] pb-[900px] xl:pb-[780px] lg:pb-[720px] sm:pb-[800px] ">				<div className="absolute top-0 pt-56 md:pt-48 pb-24 flex items-center">
-				<img
-					className="w-full absolute top-0 object-cover object-center h-full"
-					src={bannerImg}
-					alt="banner image"
-				/>
+			<div className="max-[480px]:pb-[1015px] pb-[900px] xl:pb-[780px] lg:pb-[720px] sm:pb-[800px] ">
+				{" "}
+				<div className="absolute top-0 pt-56 md:pt-48 pb-24 flex items-center">
+					<LazyLoad
+						width={400}
+						threshold={0.95}
+						onContentVisible={() => {
+							console.log("loaded!");
+						}}
+					>
+						<img
+							className="w-full absolute top-0 object-cover object-center h-full"
+							src={bannerImg}
+							alt="banner image"
+						/>
+					</LazyLoad>
 					<div className="px-4 md:px-8 custom-container z-10">
 						<h2 className="text-center md:text-left text-6xl font-extrabold text-blue-600">
 							Chocolate Fruit Cream
@@ -27,12 +38,14 @@ const Home = () => {
 							cool. Vanilla extract and diced fresh fruit are
 							added to the cooled mixture........
 						</p>
-                        <button className="mt-4 btn border-none hover:bg-blue-600 px-8 bg-blue-500">Show <FaArrowRight className="ml-2"/></button>
+						<button className="mt-4 btn border-none hover:bg-blue-600 px-8 bg-blue-500">
+							Show <FaArrowRight className="ml-2" />
+						</button>
 					</div>
 				</div>
 			</div>
 			<div className="pt-8 pb-10">
-				<Chefs/>
+				<Chefs />
 			</div>
 		</div>
 	);
