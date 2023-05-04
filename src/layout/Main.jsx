@@ -5,9 +5,11 @@ import Header from '../page/Shared/Header/Header'
 
 const Main = () => {
     return (
-        <div className='bg-blue-100'>
+        <div className='bg-blue-50'>
             <Header/>
+            <div className='min-h-[100vh]'>
             <Outlet/>
+            </div>
             <Footer/>
         </div>
     )

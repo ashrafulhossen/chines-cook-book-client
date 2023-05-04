@@ -13,7 +13,7 @@ const Header = () => {
 
 	return (
 		<header className=" absolute top-0 w-full z-10">
-            <nav className={`bg-blue-200 lg:rounded-xl flex justify-between items-center mt-0 lg:mt-1 py-4 px-10 custom-container relative lg:mb-0 ${isMenuShow && "mb-48"}`}>
+            <nav className={`bg-blue-200 lg:rounded-xl flex justify-between items-center mt-0 lg:mt-1 py-4 px-4 sm:px-10 custom-container relative lg:mb-0 ${isMenuShow && "mb-48"}`}>
 			<h1
 				onClick={goHome}
 				className=" flex items-center flex-row justify-center flex-wrap gap-3 text-4xl font-extrabold cursor-pointer flex-shrink mr-8"
@@ -69,7 +69,7 @@ const Header = () => {
 					About
 				</NavLink>
                 <div className="flex items-center gap-6">
-                    <HiUserCircle className="text-4xl"/>
+                    <p><HiUserCircle className="text-4xl"/></p>
                     <button className="btn px-4 py-2 bg-blue-600 border-0 hover:bg-blue-500">Log Out</button>
                 </div>
 			</div>
