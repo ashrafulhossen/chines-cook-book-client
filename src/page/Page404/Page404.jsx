@@ -16,7 +16,7 @@ const Page404 = () => {
 						Page not found
 					</p>
                     <p className="text-xl font-medium text-blue-400 mb-8">
-						We are sorry, the page you requested could not found. Please go back to homepage and try again
+						We are sorry, the page you requested could not found. Please go back to homepage and try again.
 					</p>
 					<Link
 						to="/"
