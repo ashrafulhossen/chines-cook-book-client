@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Authentication from "../layout/Authentication";
 import Main from "../layout/Main";
+import Blog from "../page/Blog/Blog";
 import ChefData from "../page/ChefData/Chef/Chef";
 import ErrorPage from "../page/Error/ErrorPage";
 import Home from "../page/Home/Home/Home";
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage/>,
 		children: [
 			{ path: "/", element: <Home /> },
-			{ path: "/blog", element: <Home /> },
+			{ path: "/blog", element: <Blog/> },
 			{ path: "/chefs/:id", element: <PrivateRoute><ChefData /></PrivateRoute> , loader: ({params}) => fetch(`https://chinese-cookbook-server.vercel.app/chefs/${params.id}`)},
 		],
 	},
