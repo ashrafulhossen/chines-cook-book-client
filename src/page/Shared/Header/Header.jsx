@@ -22,7 +22,7 @@ const Header = () => {
 	};
 
 	return (
-		<header className=" absolute top-0 w-full z-10">
+		<header className=" absolute top-0 w-full z-20">
 			<nav
 				className={`bg-blue-200 lg:rounded-xl flex justify-between items-center mt-0 lg:mt-1 py-4 px-4 sm:px-10 custom-container relative lg:mb-0 ${
 					isMenuShow && "mb-48"
@@ -48,9 +48,9 @@ const Header = () => {
 				<div
 					className={`${
 						isMenuShow
-							? "flex flex-col min-[568px]:mt-12 min-[491px]:mt-24 max-[490px]:mt-36 absolute top-12"
+							? "flex rounded-xl bg-blue-200 p-8 flex-col min-[568px]:mt-12 min-[491px]:mt-24 max-[490px]:mt-36 absolute top-12"
 							: "hidden"
-					} lg:flex lg:flex-row lg:static lg:mt-0 lg:items-center lg:gap-4 gap-2`}
+					} lg:flex lg:flex-row lg:static lg:p-0 lg:mt-0 lg:items-center lg:gap-4 gap-2`}
 				>
 					<NavLink
 						to="/"

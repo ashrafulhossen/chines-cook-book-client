@@ -17,7 +17,7 @@ const router = createBrowserRouter([
 		children: [
 			{ path: "/", element: <Home /> },
 			{ path: "/blog", element: <Home /> },
-			{ path: "/chefs/:id", element: <PrivateRoute><ChefData /></PrivateRoute> , loader: ({params}) => fetch(`http://localhost:5000/chefs/${params.id}`)},
+			{ path: "/chefs/:id", element: <PrivateRoute><ChefData /></PrivateRoute> , loader: ({params}) => fetch(`https://chinese-cookbook-server.vercel.app/chefs/${params.id}`)},
 		],
 	},
 	{

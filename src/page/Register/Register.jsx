@@ -1,14 +1,14 @@
 import React, { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import googleImg from "../../assets/google-ac9bfc6a.svg";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
-	const { createUser } = useContext(AuthContext);
+	const { createUser,signUpWithGoogle } = useContext(AuthContext);
 	const [name, setName] = useState(""),
 		[email, setEmail] = useState(""),
 		[password, setPassword] = useState(""),
-        [photoUrl, setPhotoUrl] = useState(""),
-        [passwordError, setPasswordError] = useState(false);
+		[photoUrl, setPhotoUrl] = useState("");
 
 	const nameEvent = (e) => {
 		setName(e.target.value);
@@ -22,8 +22,14 @@ const Register = () => {
 		setPassword(e.target.value);
 	};
 
-    const photoUrlEvent = (e) => {
+	const photoUrlEvent = (e) => {
 		setPhotoUrl(e.target.value);
+	};
+
+	const signUpWithGoogleEvent = () => {
+		signUpWithGoogle()
+			.then(() => {})
+			.catch((err) => console.log(err));
 	};
 
 	const signUpEvent = (e) => {
@@ -36,14 +42,13 @@ const Register = () => {
 
 			setEmail("");
 			setPassword("");
-            setPasswordError(false);
 		}
 	};
 	return (
 		<div className="hero">
 			<div className="hero-content gap-12 flex-col lg:flex-row-reverse">
 				<div className="text-center lg:text-left">
-					<h1 className="text-5xl w-[350px] font-bold">
+					<h1 className="text-5xl max-w-[350px] font-bold">
 						Register now!
 					</h1>
 				</div>
@@ -88,10 +93,14 @@ const Register = () => {
 								required
 							/>
 							<label className="label">
-								{password.length > 0 && password.length < 6 && <p className="text-red-500">Password must be 6 characters</p>}
+								{password.length > 0 && password.length < 6 && (
+									<p className="text-red-500">
+										Password must be 6 characters
+									</p>
+								)}
 							</label>
 						</div>
-                        <div className="form-control">
+						<div className="form-control">
 							<label className="label">
 								<span className="label-text">Photo URL</span>
 							</label>
@@ -110,7 +119,7 @@ const Register = () => {
 							</button>
 						</div>
 					</form>
-					<p className="pl-8 pb-8">
+					<p className="pl-8 pb-4">
 						<small>
 							Already have an accoutn?
 							<Link
@@ -121,7 +130,18 @@ const Register = () => {
 							</Link>
 						</small>
 					</p>
+					<div className="social pl-8 pb-8 w-full">
+					<button className="btn mb-4 bg-blue-300 w-11/12" onClick={signUpWithGoogleEvent}>
+						<img src={googleImg} alt="google logo" />
+						<span>Continue with Google</span>
+					</button>
+					<button className="btn bg-blue-300 w-11/12" onClick={signUpWithGoogleEvent}>
+						<img src={googleImg} alt="google logo" />
+						<span>Continue with Google</span>
+					</button>
 				</div>
+				</div>
+				
 			</div>
 		</div>
 	);
