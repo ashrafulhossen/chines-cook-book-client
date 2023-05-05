@@ -50,10 +50,22 @@ const Home = () => {
 			<div className="pt-8 pb-10">
 				<Chefs />
 			</div>
-			<div className="pt-8 pb-10">
+			<div className="mt-6 pt-8 pb-10">
 				<TodayRecipes />
 			</div>
-			
+			<div className="mx-auto text-center mt-8 mb-16">
+				<h3 className="text-3xl font-extrabold text-center text-uppercase">
+					Special Offers For New Subscribers
+				</h3>
+				<p className="text-center mt-2 mb-8">
+					Subscribe to our newsletters now and stay up to <br /> date with
+					new collections.
+				</p>
+				<div className="flex items-center justify-center">
+				<input type="email" placeholder="Enter your email address" className=" border-blue-500 border w-full max-w-lg text-xl px-4 h-16 rounded-s-2xl" />
+				<input type="button" value="Submit" className="rounded-e-2xl text-xl font-bold px-8 h-16 bg-blue-500" />
+				</div>
+			</div>
 		</div>
 	);
 };
