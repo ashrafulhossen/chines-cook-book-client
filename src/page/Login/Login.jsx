@@ -5,7 +5,9 @@ import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
 	const { signIn } = useContext(AuthContext);
 	const [email, setEmail] = useState(""),
-		[password, setPassword] = useState("");
+		[password, setPassword] = useState(""),
+		[passwordErr, setPasswordErr] = useState(false);
+
 	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location?.state?.from?.pathname || "/";
@@ -27,7 +29,14 @@ const Login = () => {
 				navigate(from, { replace: true });
 				console.log(user);
 			})
-			.catch((err) => console.log(err.message));
+			.catch((err) => {
+				if (err.message == "Firebase: Error (auth/wrong-password).") {
+					setPasswordErr(true);
+				} else {
+					setPasswordErr(false);
+				}
+				console.log(typeof err.message);
+			});
 
 		setEmail("");
 		setPassword("");
@@ -65,6 +74,9 @@ const Login = () => {
 								className="input input-bordered"
 								required
 							/>
+							{passwordErr && (
+								<p className="text-red-500"><small>Password Wrong. Please try again!</small></p>
+							)}
 							<label className="label">
 								<a
 									href="#"
@@ -75,13 +87,21 @@ const Login = () => {
 							</label>
 						</div>
 						<div className="form-control mt-6">
-							<button className="btn bg-blue-600  hover:bg-blue-500 border-none">Login</button>
+							<button className="btn bg-blue-600  hover:bg-blue-500 border-none">
+								Login
+							</button>
 						</div>
 					</form>
 					<p className="pl-8 pb-8">
-						<small>New in Chinese CookBook?
-                            <Link className="text-blue-700 ml-1" to={"/authentication/register"}>Register</Link>
-                        </small>
+						<small>
+							New in Chinese CookBook?
+							<Link
+								className="text-blue-700 ml-1"
+								to={"/authentication/register"}
+							>
+								Register
+							</Link>
+						</small>
 					</p>
 				</div>
 			</div>

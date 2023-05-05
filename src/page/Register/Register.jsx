@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import googleImg from "../../assets/google-ac9bfc6a.svg";
+import githubImg from "../../assets/github-logo.png";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const Register = () => {
-	const { createUser,signUpWithGoogle } = useContext(AuthContext);
+	const { createUser,signUpWithGoogle, signUpWithGithub } = useContext(AuthContext);
 	const [name, setName] = useState(""),
 		[email, setEmail] = useState(""),
 		[password, setPassword] = useState(""),
@@ -31,6 +32,12 @@ const Register = () => {
 			.then(() => {})
 			.catch((err) => console.log(err));
 	};
+
+	const signUpWithGithubEvent = () => {
+		signUpWithGithub()
+		.then(() => {})
+		.catch((err) => console.log(err));
+	}
 
 	const signUpEvent = (e) => {
 		e.preventDefault();
@@ -131,13 +138,13 @@ const Register = () => {
 						</small>
 					</p>
 					<div className="social pl-8 pb-8 w-full">
-					<button className="btn mb-4 bg-blue-300 w-11/12" onClick={signUpWithGoogleEvent}>
-						<img src={googleImg} alt="google logo" />
+					<button className="btn mb-4 bg-blue-400 hover:bg-blue-500 border-none w-11/12" onClick={signUpWithGoogleEvent}>
+						<img src={googleImg} className="mr-2" alt="google logo" />
 						<span>Continue with Google</span>
 					</button>
-					<button className="btn bg-blue-300 w-11/12" onClick={signUpWithGoogleEvent}>
-						<img src={googleImg} alt="google logo" />
-						<span>Continue with Google</span>
+					<button className="btn bg-blue-400 hover:bg-blue-500 border-none w-11/12" onClick={signUpWithGithubEvent}>
+						<img src={githubImg} className="w-8 mr-2" alt="github logo" />
+						<span>Continue with Github</span>
 					</button>
 				</div>
 				</div>
